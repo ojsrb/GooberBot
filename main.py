@@ -29,8 +29,12 @@ async def ping(interaction: discord.Interaction):
 
 @client.tree.command(name='insult')
 async def insult(interaction: discord.Interaction, user: discord.User):
-    await interaction.response.send_message(f"{user} is a big meanie!")
-    ephemeral = True
+    if user.global_name == "o.n.":
+        await interaction.response.send_message("You cannot insult my papa!", ephemeral=True)
+    else:
+        await interaction.response.send_message("sending insult...", ephemeral=True)
+        await interaction.channel.send(f"{user.name} is a big meanie!")
+
 
 @client.tree.command(name='papa')
 async def papa(interaction: discord.Interaction):
@@ -40,10 +44,12 @@ async def papa(interaction: discord.Interaction):
         await interaction.response.send_message("You are not my papa! o.n. is my papa!")
 
 @client.tree.command(name='say')
-async def say(interaction: discord.Interaction, message):
+async def say(interaction: discord.Interaction, message: str):
     if interaction.user.id == 800898653820551168:
-        await interaction.response.send_message(message)
+        await interaction.response.send_message("sending message...", ephemeral=True)
+        await interaction.channel.send(message)
+
     else:
-        await interaction.response.send_message("You cant do that!")
+        await interaction.response.send_message("You cant do that!", ephemeral=True)
 
 client.run(TOKEN)
