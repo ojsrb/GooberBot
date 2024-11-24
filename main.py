@@ -39,5 +39,11 @@ async def papa(interaction: discord.Interaction):
     else:
         await interaction.response.send_message("You are not my papa! o.n. is my papa!")
 
+@client.tree.command(name='say')
+async def say(interaction: discord.Interaction, message):
+    if interaction.user.id == 800898653820551168:
+        await message.channel.send(f"{message}")
+    else:
+        await interaction.response.send_message("You cant do that!")
 
 client.run(TOKEN)
