@@ -1,5 +1,5 @@
 # GooberBot
-## An
-### Awesome
-#### Discord
+### An
+#### Awesome
+##### Discord
 Bot
