@@ -1,5 +1,2 @@
-# GooberBot
-### An
-#### Awesome
-##### Discord
-Bot
+# OwenBot
+My discord bot :)
