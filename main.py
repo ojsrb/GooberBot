@@ -29,11 +29,10 @@ async def ping(interaction: discord.Interaction):
 
 @client.tree.command(name='insult')
 async def insult(interaction: discord.Interaction, user: discord.User):
-    if user.global_name == "o.n.":
+    if user.id == 800898653820551168:
         await interaction.response.send_message("You cannot insult my papa!", ephemeral=True)
     else:
-        await interaction.response.send_message("sending insult...", ephemeral=True)
-        await interaction.channel.send(f"{user.name} is a big meanie!")
+        await interaction.channel.send(f"{user.id} is a big meanie!")
 
 
 @client.tree.command(name='papa')
