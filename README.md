@@ -1,2 +1,5 @@
 # GooberBot
-Goober go back to sleep
+## An
+### Awesome
+#### Discord
+Bot
