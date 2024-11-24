@@ -42,7 +42,7 @@ async def papa(interaction: discord.Interaction):
 @client.tree.command(name='say')
 async def say(interaction: discord.Interaction, message):
     if interaction.user.id == 800898653820551168:
-        await interaction.message.channel.send(message)
+        await interaction.response.send_message(message)
     else:
         await interaction.response.send_message("You cant do that!")
 
