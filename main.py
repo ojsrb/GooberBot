@@ -95,6 +95,6 @@ async def family(interaction: discord.Interaction):
 
 @client.tree.command(name='id')
 async def id(interaction: discord.Interaction, user: discord.User):
-    await interaction.response.send_message(user.id)
+    await interaction.response.send_message(f"{user.name}:{user.id}")
 
 client.run(TOKEN)
