@@ -58,17 +58,6 @@ async def insult(interaction: discord.Interaction, user: discord.User):
 
     await interaction.response.send_message(f"{user}{random.choice(praises)}")
 
-
-@client.tree.command(name='spamzach')
-async def wabbit(interaction: discord.Interaction, times: int):
-    zach = await client.fetch_user(1252305316885041214)
-    dm = await zach.create_dm()
-    await interaction.response.send_message("Spammed Zach", ephemeral=True)
-    for i in range(0, times):
-        await dm.send("stoopid")
-
-
-
 @client.tree.command(name='papa')
 async def papa(interaction: discord.Interaction):
     if interaction.user.id == 800898653820551168:
