@@ -13,6 +13,8 @@ intents = Intents.default()
 
 client = commands.Bot(command_prefix='/', intents=intents)
 
+whitelist = [1131962772587020298, 800898653820551168]
+
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
@@ -60,14 +62,14 @@ async def insult(interaction: discord.Interaction, user: discord.User):
 
 @client.tree.command(name='papa')
 async def papa(interaction: discord.Interaction):
-    if interaction.user.id == 800898653820551168:
+    if interaction.user.id in whitelist:
         await interaction.response.send_message("You are my papa!")
     else:
         await interaction.response.send_message("You are not my papa! o.n. is my papa!")
 
 @client.tree.command(name='say')
 async def say(interaction: discord.Interaction, message: str):
-    if interaction.user.id == 800898653820551168:
+    if interaction.user.id in whitelist:
         await interaction.response.send_message("sending message...", ephemeral=True)
         await interaction.channel.send(message)
 
