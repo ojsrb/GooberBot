@@ -6,6 +6,8 @@ from discord.ext import commands
 from discord import app_commands
 from dotenv import load_dotenv
 
+currentVersion = "1.0.2"
+
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
@@ -88,4 +90,8 @@ async def family(interaction: discord.Interaction):
 async def id(interaction: discord.Interaction, user: discord.User):
     await interaction.response.send_message(f"{user.name}:{user.id}")
 
+@client.tree.command(name='version')
+async def version(interaction: discord.Interaction):
+    global currentVersion
+    await interaction.response.send_message(f"My version is currently: {currentVersion}")
 client.run(TOKEN)
