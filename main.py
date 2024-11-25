@@ -93,4 +93,8 @@ async def dice(interaction: discord.Interaction, sides: int):
 async def family(interaction: discord.Interaction):
     await interaction.response.send_message("My papa is o.n., my big bro is Goober")
 
+@client.tree.command(name='id')
+async def id(interaction: discord.Interaction, user: discord.User):
+    await interaction.response.send_message(user.id)
+
 client.run(TOKEN)
